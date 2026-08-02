@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.w4games.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 15 06:58:43 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: docs.w4.gd
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep  5 05:02:40 2026 GMT
+  hsts: false
+domains:
+- domain: w4games.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
+- domain: w4.gd
+  dnssec: true
+  caa: []
+  spf: false
+  dmarc: false

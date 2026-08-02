@@ -1,0 +1,64 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://docs.w4.gd/ — cross-cutting request/response semantics of the W4 Cloud
+  SDK, derived from the docs and the SDK class reference (sdk.w4.gd). W4 Cloud is
+  consumed through the w4gd Godot addon rather than a raw REST API, so several
+  conventions are SDK-level (Result objects) rather than HTTP headers.
+description: >-
+  How W4 Cloud behaves across its services when used through the w4gd GDScript
+  SDK: authentication style, the async result/error envelope, database access
+  through the W4 Relational Mapper, realtime subscriptions, pagination, and
+  versioning. Cross-links authentication/, lifecycle/, and changelog/.
+api_style: >-
+  GDScript SDK (w4gd Godot addon) over HTTPS/WebSocket. The backend is
+  Supabase-based — PostgREST for the database, GoTrue for auth, Supabase Realtime
+  (Phoenix channels) for realtime, and Supabase Storage for files — plus an
+  Agones-based dedicated game-server layer.
+authentication:
+  scheme: Project API key (workspace binding) + Supabase JWT bearer for players
+  detail: authentication/w4-games-authentication.yml
+  docs: https://docs.w4.gd/getting_started/authentication.html
+result_envelope:
+  supported: true
+  mechanism: >-
+    SDK calls return Result objects rather than raw HTTP payloads. The REST
+    client returns async/blocking/promise result variants
+    (rest-client/client_async_result.gd, client_blocking_result.gd,
+    client_promise.gd, client_result.gd); the Supabase layer returns PolyResult
+    with a nested ResultError on failure (supabase/poly_result.gd).
+  error_type: supabase/poly_result.gd ResultError
+  docs: https://sdk.w4.gd/
+database_access:
+  mechanism: >-
+    W4 Relational Mapper (W4RM) — a Godot ORM that maps Supabase/PostgreSQL rows
+    to custom GDScript classes, with query, write, security-policy, trigger, and
+    type builders (w4rm/*). Underlying transport is Supabase PostgREST.
+  docs: https://docs.w4.gd/getting_started/database/index.html
+realtime:
+  supported: true
+  mechanism: >-
+    Supabase Realtime channels (supabase/realtime.gd) provide subscriptions with
+    ChannelProxy / Subscription / Response objects; WebRTC is used for
+    peer-to-peer multiplayer sessions (matchmaker/webrtc_manager.gd).
+  docs: https://docs.w4.gd/getting_started/matchmaker/webrtc.html
+pagination:
+  style: PostgREST range (limit/offset)
+  detail: >-
+    Database reads go through Supabase PostgREST, which paginates via limit and
+    offset / Range headers on the underlying REST layer surfaced by the W4RM
+    query API.
+versioning:
+  scheme: semver (SDK addon releases)
+  current: v0.99.5
+  detail: lifecycle/w4-games-lifecycle.yml
+  docs: https://gitlab.com/W4Games/sdk/w4gd/-/releases
+idempotency:
+  supported: unknown
+  note: >-
+    W4 Cloud does not publicly document an idempotency-key contract; not asserted
+    here to avoid fabrication.
+rate_limit_signaling:
+  note: >-
+    No public rate-limit header contract is documented for W4 Cloud; the Supabase
+    backend enforces plan-level limits per workspace.

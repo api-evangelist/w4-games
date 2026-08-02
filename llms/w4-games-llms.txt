@@ -1,0 +1,37 @@
+# W4 Games
+
+> W4 Games commercializes the open-source Godot game engine — offering professional services, console ports, mobile/XR platform work, and premium support — and operates W4 Cloud (W4GD), a managed multiplayer backend-as-a-service for Godot. W4 Cloud covers player authentication, a Supabase/PostgREST database accessed through the W4 Relational Mapper (W4RM) ORM, realtime, storage, matchmaking and lobbies, WebRTC, analytics, and Agones-based dedicated game-server fleets. It is consumed through the w4gd Godot editor addon (a GDScript SDK) rather than a standalone public REST API. Backed by Lux Capital.
+
+## Product
+- [W4 Games](https://www.w4games.com): Company site — Godot professional services, console ports, XR, premium support.
+- [W4 Cloud documentation](https://docs.w4.gd/): Developer portal and documentation for the W4 Cloud multiplayer backend.
+- [W4GD SDK reference / release notes](https://sdk.w4.gd/): GDScript SDK class reference and release notes.
+
+## Getting started
+- [Getting started with W4 Cloud](https://docs.w4.gd/tutorials/getting_started/index.html): Hands-on tutorial to run an online multiplayer game round.
+- [Installation](https://docs.w4.gd/getting_started/installation.html): Download w4gd.zip from releases and enable the addon (Godot 4.0+).
+- [Player authentication](https://docs.w4.gd/getting_started/authentication.html): Project API key + Supabase JWT player auth.
+- [Database management](https://docs.w4.gd/getting_started/database/index.html): Using the W4 Relational Mapper (W4RM) ORM.
+- [Matchmaker](https://docs.w4.gd/getting_started/matchmaker/index.html): Lobbies, automated matchmaking, WebRTC.
+- [Dedicated servers](https://docs.w4.gd/getting_started/dedicated_servers/index.html): Uploading builds and Agones fleet setup.
+
+## Source & SDK
+- [W4Games on GitLab](https://gitlab.com/W4Games): SDK, cloud, build tooling, and demo projects.
+- [w4gd SDK](https://gitlab.com/W4Games/sdk/w4gd): The Godot/GDScript SDK for W4 Cloud (current v0.99.5).
+- [w4rm](https://gitlab.com/W4Games/sdk/w4rm): W4 Relational Mapper (Godot ORM).
+- [Support issues](https://gitlab.com/W4Games/sdk/support/-/issues): Developer support tracker.
+
+## Catalog artifacts
+- [APIs.json](https://raw.githubusercontent.com/api-evangelist/w4-games/refs/heads/main/apis.yml)
+- [Authentication](https://raw.githubusercontent.com/api-evangelist/w4-games/refs/heads/main/authentication/w4-games-authentication.yml)
+- [Conventions](https://raw.githubusercontent.com/api-evangelist/w4-games/refs/heads/main/conventions/w4-games-conventions.yml)
+- [Conformance](https://raw.githubusercontent.com/api-evangelist/w4-games/refs/heads/main/conformance/w4-games-conformance.yml)
+- [Packages / SDKs](https://raw.githubusercontent.com/api-evangelist/w4-games/refs/heads/main/packages/w4-games-packages.yml)
+- [Lifecycle](https://raw.githubusercontent.com/api-evangelist/w4-games/refs/heads/main/lifecycle/w4-games-lifecycle.yml)
+- [Changelog](https://raw.githubusercontent.com/api-evangelist/w4-games/refs/heads/main/changelog/w4-games-changelog.yml)
+- [Domain security](https://raw.githubusercontent.com/api-evangelist/w4-games/refs/heads/main/security/w4-games-domain-security.yml)
+
+## Company
+- Backed by: Lux Capital
+- Terms: https://www.w4games.com/terms
+- Blog: https://www.w4games.com/blog

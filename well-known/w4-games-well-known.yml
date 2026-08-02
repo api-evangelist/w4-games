@@ -1,0 +1,32 @@
+generated: '2026-07-21'
+method: searched
+source: live HTTP probes of the W4 Games / W4 Cloud hosts
+description: >-
+  Probe of the /.well-known/ discovery surface across the W4 Games product and
+  W4 Cloud developer hosts. No discovery documents are published — every probed
+  path returned 404 (or the host did not resolve). Absence is a valid, recorded
+  result. W4 Cloud auth is Supabase/GoTrue-backed and is configured per project
+  through the Godot addon, not advertised via OIDC/OAuth discovery documents on
+  these hosts.
+hosts:
+- host: https://www.w4games.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+- host: https://docs.w4.gd
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+- host: https://sdk.w4.gd
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}

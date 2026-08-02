@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: searched
+source: https://gitlab.com/W4Games/sdk/w4gd/-/releases
+docs: https://sdk.w4.gd/
+description: >-
+  W4 Cloud is released as versioned w4gd SDK (Godot addon) tags on GitLab, with
+  human-readable release notes published at sdk.w4.gd. This artifact captures the
+  recent tagged release window (versions + dates) from the GitLab repository; the
+  live release notes are the source of truth for per-release highlights.
+versioning:
+  scheme: semver
+  current: v0.99.5
+  release_notes: https://sdk.w4.gd/
+  releases: https://gitlab.com/W4Games/sdk/w4gd/-/releases
+  detail: lifecycle/w4-games-lifecycle.yml
+entries:
+- {version: v0.99.5, date: '2026-04-20', latest: true}
+- {version: v0.99.0, date: '2026-01-05'}
+- {version: v0.8.0, date: '2024-10-18'}
+- {version: v0.5.1, date: '2024-06-14'}
+- {version: v0.5.0, date: '2024-05-08'}
+- {version: v0.4.4, date: '2024-05-08'}
+- {version: v0.4.3, date: '2024-04-04'}
+- {version: v0.4.2, date: '2024-04-03'}
+- {version: v0.4.1, date: '2024-03-08'}
+- {version: v0.4.0, date: '2024-02-12'}

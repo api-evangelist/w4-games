@@ -1,0 +1,37 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://docs.w4.gd/ and the w4gd SDK class reference — cross-cutting standards
+  the W4 Cloud stack conforms to, established from the documented architecture
+  (Supabase/GoTrue/PostgREST/Realtime, WebRTC, Agones). Derived, not a provider
+  compliance claim.
+description: >-
+  Industry / cross-cutting standards W4 Cloud conforms to, established from its
+  documented technology stack. W4 does not publish a formal compliance program
+  (SOC 2 / ISO 27001 / etc.) on its public surface, so no Compliance pointer is
+  emitted.
+standards:
+- id: jwt-bearer
+  conforms: true
+  evidence: Supabase (GoTrue) issues JWT bearer tokens for player auth (supabase/jwt_utils.gd, supabase/auth.gd)
+- id: oauth2
+  conforms: true
+  evidence: Supabase GoTrue supports social OAuth sign-in providers configured per workspace
+- id: postgrest
+  conforms: true
+  evidence: database access is Supabase PostgREST surfaced through the W4 Relational Mapper (w4rm/*)
+- id: websocket-realtime
+  conforms: true
+  evidence: Supabase Realtime channels (supabase/realtime.gd) over WebSocket / Phoenix channels
+- id: webrtc
+  conforms: true
+  evidence: peer-to-peer multiplayer via matchmaker/webrtc_manager.gd
+- id: agones
+  conforms: true
+  evidence: dedicated game-server fleet management via the Agones client (game_server/agones_client.gd)
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: SDK surfaces errors as GDScript Result/PolyResult objects, not application/problem+json
+- id: openapi
+  conforms: false
+  evidence: no OpenAPI/Swagger description is published; the client surface is a GDScript SDK

@@ -1,8 +1,16 @@
 aid: w4-games
 name: W4 Games
-description: 'W4 Games is a company surfaced as a portfolio company of lux-capital and added to the API
-  Evangelist network as a stub for enrichment. Sector: gaming. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: >-
+  W4 Games is the company commercializing the open-source Godot game engine. It
+  provides hands-on professional services (adoption, architecture, performance,
+  production readiness), advanced console ports and mobile/XR platform work, and
+  premium enterprise support for studios shipping with Godot. Its developer
+  product is W4 Cloud (W4GD) — a managed multiplayer backend-as-a-service for
+  Godot covering player authentication, a Supabase/PostgREST database accessed
+  through the W4 Relational Mapper (W4RM) ORM, realtime, storage, matchmaking and
+  lobbies, WebRTC, analytics, and Agones-based dedicated game-server fleets. W4
+  Cloud is consumed through the w4gd Godot editor addon (GDScript SDK) rather than
+  a standalone public REST API. Backed by Lux Capital.
 url: https://raw.githubusercontent.com/api-evangelist/w4-games/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,13 +18,56 @@ x-backed-by:
 - lux-capital
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://www.w4games.com/web/image/website/1/favicon?unique=24d32a3
 tags:
 - Company
 - Gaming
-apis: []
+- Game Development
+- Godot
+- Multiplayer
+- Backend as a Service
+- SDK
+- Cloud
+- Game Servers
+- Realtime
+apis:
+- name: W4 Cloud
+  description: >-
+    W4 Cloud (W4GD) is a managed multiplayer backend-as-a-service for the Godot
+    game engine, consumed through the w4gd Godot editor addon (a GDScript SDK).
+    It provides player authentication, a Supabase/PostgREST-backed database
+    exposed through the W4 Relational Mapper (W4RM) ORM, realtime subscriptions,
+    file storage, matchmaking and lobbies, WebRTC networking, analytics, and
+    Agones-based dedicated game-server fleet management.
+  humanURL: https://docs.w4.gd/
+  baseURL: https://docs.w4.gd
+  tags:
+  - Multiplayer
+  - Backend as a Service
+  - Godot
+  - Game Servers
+  properties:
+  - type: Documentation
+    url: https://docs.w4.gd/
+  - type: APIReference
+    url: https://sdk.w4.gd/
+  - type: GettingStarted
+    url: https://docs.w4.gd/tutorials/getting_started/index.html
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +76,46 @@ maintainers:
 common:
 - type: Website
   url: https://www.w4games.com
+- type: DeveloperPortal
+  url: https://docs.w4.gd/
+- type: Documentation
+  url: https://docs.w4.gd/
+- type: APIReference
+  url: https://sdk.w4.gd/
+- type: GettingStarted
+  url: https://docs.w4.gd/tutorials/getting_started/index.html
+- type: Support
+  url: https://gitlab.com/W4Games/sdk/support/-/issues
+- type: Blog
+  url: https://www.w4games.com/blog
+- type: SourceCode
+  url: https://gitlab.com/W4Games
+- type: TermsOfService
+  url: https://www.w4games.com/terms
+- type: Login
+  url: https://www.w4games.com/web/login
+- type: Authentication
+  url: authentication/w4-games-authentication.yml
+- type: Packages
+  url: packages/w4-games-packages.yml
+- type: SDKs
+  url: packages/w4-games-packages.yml
+- type: WellKnown
+  url: well-known/w4-games-well-known.yml
+- type: LLMsTxt
+  url: llms/w4-games-llms.txt
+- type: Conformance
+  url: conformance/w4-games-conformance.yml
+- type: Conventions
+  url: conventions/w4-games-conventions.yml
+- type: Lifecycle
+  url: lifecycle/w4-games-lifecycle.yml
+- type: ChangeLog
+  url: changelog/w4-games-changelog.yml
+- type: DomainSecurity
+  url: security/w4-games-domain-security.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 9
+  pass: local-v1

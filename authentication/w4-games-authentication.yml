@@ -1,0 +1,46 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.w4.gd/getting_started/authentication.html
+docs: https://docs.w4.gd/getting_started/authentication.html
+description: >-
+  W4 Cloud authentication model, captured from the W4 Cloud documentation. There
+  is no standalone public REST API with an OpenAPI securitySchemes block —
+  clients authenticate through the w4gd Godot addon. Two layers exist: a project
+  API key that binds the addon to a W4 Cloud workspace, and player authentication
+  handled by a Supabase (GoTrue) identity service issuing JWT bearer tokens used
+  against the database (PostgREST), realtime, and storage services.
+summary:
+  types: [apiKey, http-bearer-jwt, oauth2]
+  api_key_in: [config]
+  oauth2_flows: [supabase-social-login]
+schemes:
+- name: W4 Cloud project API key
+  type: apiKey
+  in: config
+  detail: >-
+    A per-project/workspace API key issued from the W4 Cloud dashboard (found
+    under DOCS > API). It is set in the w4gd addon configuration to point the
+    Godot client at the correct W4 Cloud workspace/backend.
+  source: https://docs.w4.gd/getting_started/authentication.html
+- name: Player authentication (Supabase JWT)
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
+  detail: >-
+    Players authenticate via the Supabase-based identity service (GoTrue),
+    receiving a JWT bearer token. Supported sign-in methods include email/
+    password, anonymous device login (login_device with a per-user UUID and a
+    key/password), and social OAuth providers configured on the workspace. The
+    JWT authorizes calls to the Supabase-backed database (PostgREST), realtime,
+    and storage layers via the SDK (supabase/auth.gd, supabase/identity.gd,
+    supabase/jwt_utils.gd).
+  source: https://docs.w4.gd/getting_started/authentication.html
+- name: Server-managed auth (smauth)
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
+  detail: >-
+    smauth (addons/w4gd/smauth) provides server-managed authentication so an
+    authoritative dedicated server can synchronize and validate players against
+    W4 Cloud.
+  source: https://docs.w4.gd/api/class_addons_w4gd_smauth_smauth_gd.html

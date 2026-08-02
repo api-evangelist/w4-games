@@ -1,0 +1,29 @@
+generated: '2026-07-21'
+method: searched
+source: https://gitlab.com/W4Games/sdk/w4gd/-/releases
+description: >-
+  First-party W4 Cloud client library. W4 ships its SDK as a Godot editor addon
+  (GDScript) distributed from GitLab releases rather than via a language package
+  registry (npm/PyPI/etc.). Installation is by downloading w4gd.zip from the
+  releases page and unzipping it into the Godot project's addons folder (Godot
+  Engine 4.0+). Verified against the GitLab repository and the W4 Cloud docs.
+packages:
+- language: gdscript
+  registry: gitlab
+  name: w4gd
+  url: https://gitlab.com/W4Games/sdk/w4gd
+  source: https://gitlab.com/W4Games/sdk/w4gd
+  releases: https://gitlab.com/W4Games/sdk/w4gd/-/releases
+  install: Download w4gd.zip from the releases page and unzip into your Godot project's addons/ folder
+  latest: v0.99.5
+  requires: Godot Engine 4.0+
+  official: true
+  description: W4GD — the Godot/GDScript SDK for W4 Cloud (auth, database/W4RM, realtime, storage, matchmaker, game servers, analytics).
+- language: gdscript
+  registry: gitlab
+  name: w4rm
+  url: https://gitlab.com/W4Games/sdk/w4rm
+  source: https://gitlab.com/W4Games/sdk/w4rm
+  install: Bundled with the w4gd addon
+  official: true
+  description: W4 Relational Mapper — Godot ORM that maps Supabase/PostgreSQL rows to GDScript classes (ships inside the w4gd addon).
