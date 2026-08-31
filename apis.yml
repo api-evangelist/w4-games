@@ -51,7 +51,7 @@ tags:
 - Game Development
 - Godot
 - Multiplayer
-- Backend-as-a-Service
+- Backend as a Service
 - SDK
 - Cloud
 - Game Servers
@@ -80,7 +80,7 @@ apis:
   baseURL: https://docs.w4.gd
   tags:
   - Multiplayer
-  - Backend-as-a-Service
+  - Backend as a Service
   - Godot
   - Game Servers
   tags_raw:
